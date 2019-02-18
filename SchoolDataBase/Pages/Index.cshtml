@@ -1,0 +1,92 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<form method="get" action="/Create" border="0" cellpadding="0" cellspacing="0" style="width:40%;float:left">
+    <div class="input-group">
+        <h1>...</h1>
+        <h4>Student Entry</h4>
+        <input type="text" name="studentRollNumber" class="form-control" placeholder="Roll No." />
+        <input type="text" name="studentName" class="form-control" placeholder="Name" />
+        <input type="text" name="studentStandard" class="form-control" placeholder="Standard (Class)" />
+        <input type="submit" value="CREATE" class="btn btn-primary" style="float:left;" />
+    </div>
+</form>
+
+<form method="get" action="/Create" border="0" cellpadding="0" cellspacing="0" style="width:40%;float:right">
+    <div class="input-group">
+        <h1>...</h1>
+        <h4>Teacher Entry</h4>
+        <input type="text" name="teacherID" class="form-control" placeholder="Teacher ID" />
+        <input type="text" name="teacherName" class="form-control" placeholder="Name" />
+        <input type="text" name="teacherSubject" class="form-control" placeholder="Subject" />
+        <input type="text" name="teacherClass" class="form-control" placeholder="Class teacher of" />
+        <input type="submit" value="CREATE" class="btn btn-primary" style="float:right;" />
+    </div>
+</form>
+
+
+<form method="get" action="/Create" border="0" cellpadding="0" cellspacing="0" style="width:40%;float:left">
+    <div class="input-group">
+        <h1>...</h1>
+        <h4>Subject ENTRY</h4>
+        <input type="text" name="subjectCode" class="form-control" placeholder="Subject Code" />
+        <input type="text" name="hod" class="form-control" placeholder="Head of Department" />
+        <input type="submit" value="CREATE" class="btn btn-primary" style="float:left;" />
+    </div>
+</form>
+
+<form method="get" action="/Create" border="0" cellpadding="0" cellspacing="0" style="width:40%;float:right">
+    <div class="input-group">
+        <h1>...</h1>
+        <h4>Non Teaching Staff Entry</h4>
+        <input type="text" name="staffID" class="form-control" placeholder="Staff ID" />
+        <input type="text" name="staffName" class="form-control" placeholder="Name" />
+        <input type="text" name="staffRole" class="form-control" placeholder="Role" />
+        <input type="text" name="staffSalary" class="form-control" placeholder="Salary" />
+        <input type="submit" value="CREATE" class="btn btn-primary" style="float:right;" />
+    </div>
+</form>
+<div class="delete-group" style="width:50%;">
+    <h1>DELETE ENTRY</h1>
+    <form method="get" action="/Delete" border="0" cellpadding="0" cellspacing="0" style="width:100%;float:left">
+        <div class="input-group">
+            <input type="text" name="studentRollNumber" class="form-control" placeholder="Roll Number" />
+            <input type="submit" value="DELETE" class="btn btn-primary" style="float:left;background:red;" />
+        </div>
+    </form>
+    <form method="get" action="/Delete" border="0" cellpadding="0" cellspacing="0" style="width:100%;float:left">
+        <div class="input-group">
+            <input type="text" name="teacherID" class="form-control" placeholder="Teacher ID" />
+            <input type="submit" value="DELETE" class="btn btn-primary" style="float:left;background:red;" />
+        </div>
+    </form>
+    <form method="get" action="/Delete" border="0" cellpadding="0" cellspacing="0" style="width:100%;float:left">
+        <div class="input-group">
+            <input type="text" name="staffID" class="form-control" placeholder="Staff ID" />
+            <input type="submit" value="DELETE" class="btn btn-primary" style="float:left;background:red;" />
+        </div>
+    </form>
+    <form method="get" action="/Delete" border="0" cellpadding="0" cellspacing="0" style="width:100%;float:left">
+        <div class="input-group">
+            <input type="text" name="subjectCode" class="form-control" placeholder="Subject Code" />
+            <input type="submit" value="DELETE" class="btn btn-primary" style="float:left;background:red;" />
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        background-image: url('Images/bg.jpeg');
+        font-size: 12pt;
+        margin: 0;
+        padding: 0;
+    }
+</style>
