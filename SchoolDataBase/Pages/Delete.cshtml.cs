@@ -34,32 +34,41 @@ namespace SchoolDataBase.Pages
 
                 primaryKey = newDataArray[0].Split("=")[0];
 
-                connection.Open();
-
-                MySqlCommand mySqlCommand = connection.CreateCommand();
-                mySqlCommand.CommandType = CommandType.Text;
-
-                switch (primaryKey)
+                try
                 {
-                    case "?studentRollNumber":
-                        mySqlCommand.CommandText = deleteStudent();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                    case "?teacherID":
-                        mySqlCommand.CommandText = deleteTeacher();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                    case "?subjectCode":
-                        mySqlCommand.CommandText = deleteSubject();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                    case "?staffID":
-                        mySqlCommand.CommandText = deleteStaff();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                }
 
-                connection.Close();
+                    connection.Open();
+
+                    MySqlCommand mySqlCommand = connection.CreateCommand();
+                    mySqlCommand.CommandType = CommandType.Text;
+
+                    switch (primaryKey)
+                    {
+                        case "?studentRollNumber":
+                            mySqlCommand.CommandText = deleteStudent();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                        case "?teacherID":
+                            mySqlCommand.CommandText = deleteTeacher();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                        case "?subjectCode":
+                            mySqlCommand.CommandText = deleteSubject();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                        case "?staffID":
+                            mySqlCommand.CommandText = deleteStaff();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                    }
+
+                    connection.Close();
+
+                }
+                catch(Exception e)
+                {
+
+                }
             }
         }
 

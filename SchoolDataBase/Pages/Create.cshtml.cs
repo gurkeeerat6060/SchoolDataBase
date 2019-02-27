@@ -34,32 +34,41 @@ namespace SchoolDataBase.Pages
 
                 primaryKey = newDataArray[0].Split("=")[0];
 
-                mySqlConnection.Open();
-
-                MySqlCommand mySqlCommand = mySqlConnection.CreateCommand();
-                mySqlCommand.CommandType = CommandType.Text;
-
-                switch (primaryKey)
+                try
                 {
-                    case "?studentRollNumber":
-                        mySqlCommand.CommandText = createStudent();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                    case "?teacherID":
-                        mySqlCommand.CommandText = createTeacher();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                    case "?subjectCode":
-                        mySqlCommand.CommandText = createSubject();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
-                    case "?staffID":
-                        mySqlCommand.CommandText = createStaff();
-                        mySqlCommand.ExecuteNonQuery();
-                        break;
+                    mySqlConnection.Open();
+
+                    MySqlCommand mySqlCommand = mySqlConnection.CreateCommand();
+                    mySqlCommand.CommandType = CommandType.Text;
+
+                    switch (primaryKey)
+                    {
+                        case "?studentRollNumber":
+                            mySqlCommand.CommandText = createStudent();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                        case "?teacherID":
+                            mySqlCommand.CommandText = createTeacher();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                        case "?subjectCode":
+                            mySqlCommand.CommandText = createSubject();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                        case "?staffID":
+                            mySqlCommand.CommandText = createStaff();
+                            mySqlCommand.ExecuteNonQuery();
+                            break;
+                    }
+
+                    mySqlConnection.Close();
+
+                }
+                catch(Exception ex)
+                {
+
                 }
 
-                mySqlConnection.Close();
             }
         }
 
